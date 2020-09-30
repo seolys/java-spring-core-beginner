@@ -1,6 +1,7 @@
 package hello.core.member;
 
 public class Member {
+
 	private Long id;
 	private String name;
 	private Grade grade;
@@ -33,5 +34,14 @@ public class Member {
 
 	public void setGrade(Grade grade) {
 		this.grade = grade;
+	}
+
+	@Override
+	public String toString() {
+		return "Member{" +
+				"id=" + id +
+				", name='" + name + '\'' +
+				", grade=" + grade +
+				'}';
 	}
 }

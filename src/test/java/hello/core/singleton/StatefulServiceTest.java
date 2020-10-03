@@ -10,7 +10,7 @@ import org.springframework.context.annotation.Bean;
 class StatefulServiceTest {
 
 	@Test
-	@DisplayName("")
+	@DisplayName("싱글톤 객체에서 값을 저장하면, Thread-Safe하지않는부분 확인.")
 	void stateServiceSingletonTest() {
 		ApplicationContext context = new AnnotationConfigApplicationContext(TestConfig.class);
 		StatefulService statefulService1 = context.getBean(StatefulService.class);
@@ -20,7 +20,7 @@ class StatefulServiceTest {
 		statefulService1.order("userA", 10000);
 
 		// ThreadB: B사용자가 20000원 주문
-		statefulService1.order("userB", 20000);
+		statefulService2.order("userB", 20000);
 
 		// ThreadA: 사용자A 주문 금액 조회
 		int price = statefulService1.getPrice();

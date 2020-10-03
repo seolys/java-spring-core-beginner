@@ -11,10 +11,10 @@ import org.junit.jupiter.api.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-public class ConfigrationSigletonTest {
+public class ConfigurationSingletonTest {
 
 	@Test
-	@DisplayName("@Configration Singleton test")
+	@DisplayName("@Configuration Singleton test")
 	void configurationTest() {
 		ApplicationContext ac = new AnnotationConfigApplicationContext(AppConfig.class);
 		MemberServiceImpl memberService = ac.getBean("memberService", MemberServiceImpl.class);
@@ -31,7 +31,7 @@ public class ConfigrationSigletonTest {
 	}
 
 	@Test
-	@DisplayName("")
+	@DisplayName("프록시로 생성된 AppConfig 확인.")
 	void configurationDeep() {
 		ApplicationContext ac = new AnnotationConfigApplicationContext(AppConfig.class);
 		AppConfig bean = ac.getBean(AppConfig.class);

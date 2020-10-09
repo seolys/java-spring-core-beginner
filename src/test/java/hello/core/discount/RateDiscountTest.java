@@ -7,7 +7,7 @@ import hello.core.member.Member;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-class RateDiscountPolicyTest {
+class RateDiscountTest {
 
 	RateDiscountPolicy discountPolicy = new RateDiscountPolicy();
 
